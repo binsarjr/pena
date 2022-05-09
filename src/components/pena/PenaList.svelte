@@ -4,7 +4,7 @@
 	import { fly } from 'svelte/transition';
 
 	import type { IPenaList } from './Types';
-  $: visible = false;
+	$: visible = false;
 
 	onMount(() => (visible = true));
 	export let pena: IPenaList[] = [];

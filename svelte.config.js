@@ -11,7 +11,9 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			default: true,
-			concurrency: 10
+			concurrency: 10,
+			crawl: true,
+			enabled: true
 		}
 	}
 };

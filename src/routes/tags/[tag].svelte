@@ -33,13 +33,13 @@
 			link: '/dunia-ini-ada-batasnya4'
 		}
 	].map((p) => {
-		p.link = "/"+slugify(p.title);
+		p.link = '/' + slugify(p.title);
 		return p;
 	});
 </script>
 
 <section class="mt-12 text-xl md:text-2xl">
-  <h1 class="inline-flex font-semibold">Tag: {tag}</h1>
+	<h1 class="inline-flex font-semibold">Tag: {tag}</h1>
 </section>
 <span style="background:#E07A5F;" class="w-32  my-5 p-[1px] rounded" />
 
