@@ -13,7 +13,10 @@ const config = {
 			default: true,
 			concurrency: 10,
 			crawl: true,
-			enabled: true
+			enabled: true,
+			onError: ({ status, path, referrer, referenceType }) => {
+				console.warn(`${status} ${path}${referrer ? ` (${referenceType} from ${referrer})` : ''}`);
+			}
 		}
 	}
 };

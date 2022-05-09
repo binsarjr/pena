@@ -1,3 +1,6 @@
+<script context="module">
+</script>
+
 <script lang="ts">
 	import Container from '../components/Container.svelte';
 
@@ -22,21 +25,6 @@
 			targetBlank: true
 		}
 	];
-
-	const socialMedia = [
-		{
-			link: 'https://www.instagram.com/binsardj/',
-			name: 'instagram'
-		},
-		{
-			link: 'https://github.com/binsarjr',
-			name: 'github'
-		},
-		{
-			link: 'https://www.linkedin.com/in/binsarjr/',
-			name: 'linkedin'
-		}
-	];
 </script>
 
 <Nav />
@@ -44,11 +32,6 @@
 	<slot />
 </Container>
 <footer class="py-5">
-	<section class="float-left">
-		{#each socialMedia as { link, name }}
-			<a href={link} class="mr-5" target="_blank">{name}</a>
-		{/each}
-	</section>
 	<section class="float-right">
 		<div class="flex flex-row">
 			{#each backlinks as backlink}
