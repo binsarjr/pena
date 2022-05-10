@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+	box-sizing: border-box;
+}
+
 html,
 body {
 	color: #3d405b;
@@ -11,15 +15,18 @@ body {
 	background-color: #f4f1de;
 	padding: 1rem 0.5rem;
 }
+
 p,
 a {
 	color: #3d405b;
 }
+
 #svelte {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 }
+
 h1,
 h2,
 h3,

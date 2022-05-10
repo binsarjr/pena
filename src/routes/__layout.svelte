@@ -1,11 +1,9 @@
-<script context="module">
-</script>
-
 <script lang="ts">
-	import Container from '../components/Container.svelte';
-
+	import { afterNavigate } from '$app/navigation';
 	import '../app.css';
+	import Container from '../components/Container.svelte';
 	import Nav from './../components/Nav.svelte';
+	import Sign from '../components/sign.svelte';
 
 	const backlinks: (
 		| string
@@ -25,7 +23,15 @@
 			targetBlank: true
 		}
 	];
+	let showLoading = true;
+	afterNavigate(() => {
+		setTimeout(() => (showLoading = false), 4000);
+	});
 </script>
+
+{#if showLoading}
+	<Sign />
+{/if}
 
 <Nav />
 <Container>
