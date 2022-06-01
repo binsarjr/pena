@@ -36,6 +36,9 @@ interface Image {
             url: string
             expiry_time: string
         }
+        external?: {
+            url?:string
+        }
     }
 }
 export class Notion {
@@ -61,10 +64,12 @@ export class Notion {
     }
     private image() {
         const imageBlock: Image = this.block as Image
+
+        const url = imageBlock.image?.file?.url || imageBlock.image?.external?.url
         const caption = Notion.RenderText(imageBlock.image.caption as any)
         this.contents.push(`
             <div class="flex flex-col mx-auto w-full md:w-1/2 self-center">
-                <img src="${imageBlock.image.file.url}" class="rounded" alt="${imageBlock.image.file.url}" />
+                <img src="${url}" class="rounded" alt="${url}" />
                 <p>${caption}</p>
             </div>
         `)
