@@ -13,7 +13,7 @@ export default class PageService {
         const results: IPenaList[] = pages.data.map(page => {
             return {
                 title: page.title,
-                updated_at: moment(page.updatedAt).format('Do MMMM YYYY, h:mm:ss a'),
+                updated_at: moment(page.updatedAt).add(7,'hours').format('Do MMMM YYYY, h:mm:ss a'),
                 link: "/" + slugify(page.title) + "-" + page.pageId
             }
         })

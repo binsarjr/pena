@@ -36,7 +36,7 @@ export default class PageRepository {
         return {
             title,
             tags,
-            updatedAt: moment(page['last_edited_time']).locale('id').format('Do MMMM YYYY'),
+            updatedAt: moment(page['last_edited_time']).add(7,'hours').locale('id').format('Do MMMM YYYY'),
             body: contents.join('\n'),
         }
 
