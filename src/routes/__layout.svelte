@@ -23,7 +23,7 @@
 			targetBlank: true
 		}
 	];
-	let showLoading = false;
+	let showLoading = true;
 
 	afterNavigate(() => {
 		setTimeout(() => (showLoading = false), 4000);
