@@ -1,4 +1,4 @@
-export default (str) => {
+export default (str:string) => {
 	str = String(str).toString();
 	str = str.replace(/^\s+|\s+$/g, ''); // trim
 	str = str.toLowerCase();
@@ -522,6 +522,7 @@ export default (str) => {
 	};
 
 	Object.keys(swaps).forEach((swap) => {
+		// @ts-ignore
 		swaps[swap].forEach((s) => {
 			str = str.replace(new RegExp(s, 'g'), swap);
 		});

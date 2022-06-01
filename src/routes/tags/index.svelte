@@ -4,20 +4,17 @@
 	let tags: {
 		tagName: string;
 		link: string;
-		prefix: string;
-	}[] = [];
-	$: {
-		tags = [
-			{
-				tagName: 'hidup',
-				link: '/tags/hidup'
-			},
-			{
-				tagName: 'motivasi',
-				link: '/tags/motivasi'
-			}
-		];
-	}
+		prefix?: string;
+	}[] = [
+		{
+			tagName: 'hidup',
+			link: '/tags/hidup'
+		},
+		{
+			tagName: 'motivasi',
+			link: '/tags/motivasi'
+		}
+	];
 </script>
 
 <section class="mt-12 text-xl md:text-2xl">
