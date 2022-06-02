@@ -9,5 +9,15 @@
 	</head>
 	<body>
 		<div id="svelte">%svelte.body%</div>
+		<script>
+			document.querySelectorAll('a').forEach(el => {
+			const targetUrl = new URL(el.href)
+			if(targetUrl.host){
+				if(targetUrl.host != new URL(location.href).host){
+					el.setAttribute('target','_blank')
+				}
+			}
+		})
+		</script>
 	</body>
 </html>

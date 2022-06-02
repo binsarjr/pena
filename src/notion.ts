@@ -102,7 +102,7 @@ export class Notion {
                 content = `<pre>${content}</pre>`
                 return
             }
-            if (richtText?.annotations?.bold) content = `<b>${content}</b>`
+            if (richtText?.annotations?.bold) content = `<b class="font-bold">${content}</b>`
             if (richtText?.annotations?.italic) content = `<i>${content}</i>`
             if (richtText?.annotations?.underline) content = `<u>${content}</u>`
             if (richtText?.annotations?.strikethrough) content = `<s>${content}</s>`
@@ -123,14 +123,17 @@ export class Notion {
 
             if (richtText?.annotations?.code) {
                 content = `<pre>${content}</pre>`
-                return
+                continue
             }
-            if (richtText?.annotations?.bold) content = `<b>${content}</b>`
+            if (richtText?.annotations?.bold) content = `<b class="font-bold">${content}</b>`
             if (richtText?.annotations?.italic) content = `<i>${content}</i>`
             if (richtText?.annotations?.underline) content = `<u>${content}</u>`
             if (richtText?.annotations?.strikethrough) content = `<s>${content}</s>`
             if (richtText?.annotations?.color != 'default') {
                 content = `<font color="${richtText.annotations.color}">${content}</font>`
+            }
+            if(richtText.href) {
+                content = `<a href="${richtText.href}" class="text-blue-500 hover:text-blue-800">${content}</a>`
             }
             contents += content
         }
@@ -145,7 +148,7 @@ export class Notion {
                 content = `<pre>${content}</pre>`
                 continue
             }
-            if (block?.annotations?.bold) content = `<b>${content}</b>`
+            if (block?.annotations?.bold) content = `<b class="font-bold">${content}</b>`
             if (block?.annotations?.italic) content = `<i>${content}</i>`
             if (block?.annotations?.underline) content = `<u>${content}</u>`
             if (block?.annotations?.strikethrough) content = `<s>${content}</s>`

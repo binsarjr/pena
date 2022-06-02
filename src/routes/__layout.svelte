@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
+	// @ts-expect-error
+	import NProgress from 'nprogress';
+	import 'nprogress/nprogress.css';
+	import { navigating } from '$app/stores';
 	import '../app.css';
 	import Container from '../components/Container.svelte';
 	import Nav from './../components/Nav.svelte';
@@ -28,6 +32,18 @@
 	afterNavigate(() => {
 		setTimeout(() => (showLoading = false), 4000);
 	});
+	NProgress.configure({
+		// Full list: https://github.com/rstacruz/nprogress#configuration
+		minimum: 0.16
+	});
+	$: {
+		if ($navigating) {
+			NProgress.start();
+		}
+		if (!$navigating) {
+			NProgress.done();
+		}
+	}
 </script>
 
 {#if showLoading}
