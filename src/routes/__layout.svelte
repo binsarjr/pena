@@ -27,7 +27,8 @@
 			targetBlank: true
 		}
 	];
-	let showLoading = true;
+
+	let showLoading = !import.meta.env.DEV;
 
 	afterNavigate(() => {
 		setTimeout(() => (showLoading = false), 4000);

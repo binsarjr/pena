@@ -14,7 +14,7 @@
 		<p class="text-gray-500 text-lg">@binsar / {@html pageDetail.updatedAt}</p>
 		<section class="flex justify-center mt-5">
 			{#each pageDetail.tags as tag}
-				<Tag tagName="{tag}" link="/tags/{tag}" />
+				<Tag tagName={tag} link="/tags/{tag}" />
 			{/each}
 		</section>
 	</center>

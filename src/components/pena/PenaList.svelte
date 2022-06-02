@@ -13,4 +13,6 @@
 			<p class="text-sm text-gray-500">{updated_at}</p>
 		</a>
 	</section>
+{:else}
+	<p>Data belum tersedia</p>
 {/each}

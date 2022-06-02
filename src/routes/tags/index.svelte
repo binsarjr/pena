@@ -1,20 +1,11 @@
 <script lang="ts">
 	import Tag from '../../components/Tag.svelte';
 	import Container from '../../components/Container.svelte';
-	let tags: {
+	export let tags: {
 		tagName: string;
 		link: string;
 		prefix?: string;
-	}[] = [
-		{
-			tagName: 'hidup',
-			link: '/tags/hidup'
-		},
-		{
-			tagName: 'motivasi',
-			link: '/tags/motivasi'
-		}
-	];
+	}[];
 </script>
 
 <section class="mt-12 text-xl md:text-2xl">

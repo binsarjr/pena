@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%svelte.assets%/signature.svg" />
+		<title>Pena</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%svelte.head%
+	</head>
 
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="%svelte.assets%/favicon.png" />
-	<title>Pena</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	%svelte.head%
-</head>
-
-<body>
-	<div id="svelte">%svelte.body%</div>
-	<script>
-		document.addEventListener("click", function (e) {
-			if (!e?.target?.href) return
-			if (new URL(e.target.href).host != new URL(window.location.href).host && !e.target.hasAttribute("target")) {
-				e.preventDefault();
-				e.target.setAttribute("target", "_blank");
-				window.open(e.target.href,'_blank')
-			}
-		});
-	</script>
-</body>
-
+	<body>
+		<div id="svelte">%svelte.body%</div>
+		<script>
+			document.addEventListener('click', function (e) {
+				if (!e?.target?.href) return;
+				if (
+					new URL(e.target.href).host != new URL(window.location.href).host &&
+					!e.target.hasAttribute('target')
+				) {
+					e.preventDefault();
+					e.target.setAttribute('target', '_blank');
+					window.open(e.target.href, '_blank');
+				}
+			});
+		</script>
+	</body>
 </html>

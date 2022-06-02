@@ -1,11 +1,11 @@
 <script lang="ts">
 	import PenaList from '../components/pena/PenaList.svelte';
 	import type { IPenaList } from '../components/pena/Types';
-	
+
 	const name = 'Binsar Dwi Jasuma';
 	const summary = 'Suka menulis hal apapun yang terlintas dalam pikiran.';
 
-	export let pena: IPenaList[]
+	export let pena: IPenaList[];
 </script>
 
 <section class="mt-12 text-xl md:text-2xl">

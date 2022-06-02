@@ -1,6 +1,6 @@
 export interface PageOneResponse {
-    title:string
-    tags: string[]
-    updatedAt: string
-    body: string
+	title: string;
+	tags: string[];
+	updatedAt: string;
+	body: string;
 }
