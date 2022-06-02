@@ -2,7 +2,7 @@
 	import { afterNavigate } from '$app/navigation';
 	// @ts-expect-error
 	import NProgress from 'nprogress';
-	import 'nprogress/nprogress.css';
+	import '../styles/nprogress.scss';
 	import { navigating } from '$app/stores';
 	import '../app.css';
 	import Container from '../components/Container.svelte';
@@ -76,4 +76,5 @@
 	a {
 		color: $secondary;
 	}
+
 </style>
