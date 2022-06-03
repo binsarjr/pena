@@ -75,6 +75,7 @@ export default class PageRepository {
 			.replace(/\/p>$/i, '/h1>');
 		const tags = page['properties']['tags']['multi_select'].map((d: { name: string }) => d.name);
 		return {
+			pageId: page['id'],
 			title,
 			tags,
 			updatedAt: moment(page['last_edited_time'])
