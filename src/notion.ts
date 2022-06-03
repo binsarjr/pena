@@ -43,7 +43,7 @@ interface Image {
 }
 export class Notion {
 	private contents: string[] = [];
-	constructor(private block: { [i: string]: any }) {}
+	constructor(private block: { [i: string]: any }) { }
 
 	html() {
 		const procs: { [i: string]: Function } = {
@@ -167,7 +167,7 @@ export class Notion {
 }
 
 export const NotionConfig = {
-	PENAID: () => process.env.PENAID!
+	PENAID: () => process.env.PENAID! || import.meta.env.PENAID
 };
 
-export default new Client({ auth: process.env.NOTION_ACCESS_TOKEN });
+export default new Client({ auth: process.env.NOTION_ACCESS_TOKEN! || import.meta.env.NOTION_ACCESS_TOKEN });

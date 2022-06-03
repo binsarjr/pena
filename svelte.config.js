@@ -10,7 +10,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		prerender: {
-			default: true,
+			default: false,
 			concurrency: 10,
 			crawl: true,
 			enabled: true,
