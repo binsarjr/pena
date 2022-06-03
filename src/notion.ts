@@ -85,9 +85,9 @@ export class Notion {
 			6: 'h6'
 		};
 		const headClass: { [i: number]: string } = {
-			1: 'text-3xl',
-			2: 'text-2xl',
-			3: 'text-xl',
+			1: 'mt-10 text-3xl',
+			2: 'mt-5 text-2xl',
+			3: 'mt-3 text-xl',
 			4: 'text-lg',
 			5: 'text-md',
 			6: 'text-sm'
